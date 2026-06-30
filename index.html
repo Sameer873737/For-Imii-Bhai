@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imtanan Bhai - Ek Sachhi Guzarish</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config for Custom Colors & Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        arabic: ['Amiri', 'serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            pink: '#FFE5EC',
+                            rose: '#FFB3C6',
+                            green: '#D8F3DC',
+                            emerald: '#95D5B2',
+                            yellow: '#FFF3B0',
+                            lavender: '#E0C3FC',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.8 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animated Background Gradient */
+        .bg-animated {
+            background: linear-gradient(-45deg, #FFE5EC, #D8F3DC, #FFF3B0, #E0C3FC);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Hearts Particles */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            animation: rise 5s ease-in infinite;
+        }
+
+        @keyframes rise {
+            0% { opacity: 0; transform: translateY(0) scale(0.5); }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-100px) scale(1.2); }
+        }
+
+        /* Hide scrollbar for cleaner look but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB3C6; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff8fae; 
+        }
+    </style>
+</head>
+<body class="bg-animated text-slate-800 font-sans min-h-screen relative overflow-x-hidden selection:bg-pastel-rose selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-heading font-bold text-xl text-teal-800 tracking-wide">Imtanan Bhai</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#sachhai" class="text-slate-600 hover:text-rose-500 font-medium transition-colors px-3 py-2 rounded-md">Sachhai</a>
+                        <a href="#apnapan" class="text-slate-600 hover:text-rose-500 font-medium transition-colors px-3 py-2 rounded-md">Apnapan</a>
+                        <a href="#mohabbat" class="text-slate-600 hover:text-rose-500 font-medium transition-colors px-3 py-2 rounded-md">Mohabbat</a>
+                        <a href="#quran" class="text-slate-600 hover:text-rose-500 font-medium transition-colors px-3 py-2 rounded-md">Hidayat</a>
+                        <a href="#guzarish" class="bg-rose-400 hover:bg-rose-500 text-white px-4 py-2 rounded-full shadow-md transition-all transform hover:scale-105">Ek Guzarish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed top-20 left-10 text-pastel-rose opacity-50 particle" style="animation-delay: 0s;">🤍</div>
+    <div class="fixed top-40 right-20 text-pastel-emerald opacity-50 particle" style="animation-delay: 2s;">🌿</div>
+    <div class="fixed bottom-40 left-1/4 text-pastel-lavender opacity-50 particle" style="animation-delay: 4s;">✨</div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center relative z-10 mb-16">
+            <div class="glass-card rounded-3xl p-8 md:p-12 w-full animate-float">
+                <p class="font-arabic text-3xl md:text-4xl text-teal-800 mb-6 text-center">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+                <p class="text-sm text-slate-500 mb-8 italic">In the name of Allah, the Most Gracious, the Most Merciful</p>
+                
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                    Imtanan Bhai, <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-rose-500">Ek Dil Se Maafi</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed mb-8">
+                    Aap bade bhai hain — aapki izzat, aapka gussa, aapka haq, sab samajhta hoon. Yeh page koi safai nahi, sirf ek sachche dil ki guzarish hai. Thoda sa waqt dijiye, sun lijiye jo dil mein hai.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <a href="#sachhai" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-teal-500/30 transition-all transform hover:-translate-y-1">Meri Baat Suniye</a>
+                    <a href="#guzarish" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3 rounded-full font-medium shadow-sm transition-all hover:-translate-y-1">Seedha Guzarish Par Jayein</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 animate-bounce opacity-60">
+                <p class="text-sm text-slate-600 mb-2">Scroll to explore</p>
+                <svg class="w-6 h-6 mx-auto text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
+
+        <!-- Section 1: Sachhai (Acceptance) -->
+        <section id="sachhai" class="mb-20 pt-16">
+            <div class="glass-card rounded-3xl p-8 md:p-10 transition-transform duration-500 hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center text-rose-500 text-2xl">
+                        🤲
+                    </div>
+                    <h2 class="font-heading text-3xl font-bold text-slate-800">Sachhai aur Maafi</h2>
+                </div>
+                <div class="space-y-4 text-slate-700 text-lg leading-relaxed">
+                    <p>
+                        Bhai, main janta hoon main galat tha. Shaista se shadi se pehle is tarah baat karna aur boundaries cross karna Islamically aur as a family bhi theek nahi tha. Aapka gussa bilkul jayaz hai.
+                    </p>
+                    <p>
+                        Ek bade bhai ke naate aapne jo bhi react kiya, woh aapka haq tha apni behen ki hifazat ke liye. Main apni is galti ko bina kisi shart ke manta hoon aur Allah se bhi tauba karta hoon, aur aapse bhi haath jod kar maafi mangta hoon.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Apnapan (Friendship/Bond) -->
+        <section id="apnapan" class="mb-20 pt-16">
+            <div class="glass-card rounded-3xl p-8 md:p-10 border-l-8 border-l-pastel-emerald transition-transform duration-500 hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-2xl">
+                        🤝
+                    </div>
+                    <h2 class="font-heading text-3xl font-bold text-slate-800">Hamar Apnapan</h2>
+                </div>
+                <div class="space-y-4 text-slate-700 text-lg leading-relaxed">
+                    <p>
+                        Bhai, kya aapko yaad hai woh waqt jab hum sirf dost the? Aapke mushkil waqt mein, maine hamesha koshish ki thi ki ek sacche dost aur bhai ki tarah aapke saath khada rahun.
+                    </p>
+                    <p>
+                        Meri dosti kabhi dikhawa nahi thi. Jo izzat aur mohabbat mere dil mein aapke liye tab thi, woh aaj bhi hai. Ek galti ki wajah se kya humari woh dosti, woh loyalty poori tarah khatam ho jayegi? Please us waqt ko yaad karein jab hum ek doosre ke dukh-dard samajhte the.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Mohabbat (Love & Loyalty) -->
+        <section id="mohabbat" class="mb-20 pt-16">
+            <div class="glass-card rounded-3xl p-8 md:p-10 transition-transform duration-500 hover:shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-pastel-rose rounded-bl-full opacity-20"></div>
+                <div class="flex items-center gap-4 mb-6 relative z-10">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-2xl">
+                        💍
+                    </div>
+                    <h2 class="font-heading text-3xl font-bold text-slate-800">Pak Niyat aur Sacchayi</h2>
+                </div>
+                <div class="space-y-4 text-slate-700 text-lg leading-relaxed relative z-10">
+                    <p>
+                        Meri niyat Shaista ke liye hamesha pak rahi hai. Main uski izzat karta hoon, usey chahta hoon, aur uske saath ek halal aur khubsurat zindagi basana chahta hoon.
+                    </p>
+                    <p class="font-medium text-slate-900 bg-white/50 p-4 rounded-lg border border-white">
+                        Uske aur aap sab ke liye, main har badi qurbani dene ko tayyar hoon. Yahan tak ki apne future ke liye apni nationality change karne jaisa bada step bhi lene ko raazi hoon, taaki main ek zimmedar shohar ban sakun aur aap sab ka sar fakhr se ooncha rakh sakun.
+                    </p>
+                    <p>
+                        Yeh meri aapse ek mard ki mard se zubaan hai. Main usey hamesha khush rakhunga.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Quran & Hadith -->
+        <section id="quran" class="mb-20 pt-16">
+            <div class="glass-card rounded-3xl p-8 md:p-10 bg-gradient-to-br from-white/60 to-emerald-50/60 transition-transform duration-500 hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 text-2xl">
+                        📖
+                    </div>
+                    <h2 class="font-heading text-3xl font-bold text-slate-800">Deen Ki Roshni Mein</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Ayah -->
+                    <div class="border-b border-slate-200/50 pb-6">
+                        <p class="font-arabic text-2xl md:text-3xl text-right text-teal-800 mb-4 leading-loose">
+                            وَسَارِعُوا إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا السَّمَاوَاتُ وَالْأَرْضُ أُعِدَّتْ لِلْمُتَّقِينَ ﴿١٣٣﴾ الَّذِينَ يُنفِقُونَ فِي السَّرَّاءِ وَالضَّرَّاءِ وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ
+                        </p>
+                        <p class="text-slate-600 text-lg italic">
+                            "And hasten to forgiveness from your Lord and a garden as wide as the heavens and earth, prepared for the righteous - Who spend [in the cause of Allah] during ease and hardship and who restrain anger and who pardon the people - and Allah loves the doers of good."
+                        </p>
+                        <p class="text-sm text-teal-700 mt-2 font-semibold">— Surah Ali 'Imran (3:133-134)</p>
+                    </div>
+
+                    <!-- Hadith -->
+                    <div>
+                        <p class="text-slate-700 text-lg leading-relaxed">
+                            Rasoolullah (ﷺ) ne farmaya: <br>
+                            <span class="font-medium text-slate-900">"Jo shakhs doosron par reham nahi karta, Allah us par reham nahi karta."</span> (Sahih Bukhari)
+                        </p>
+                        <p class="text-slate-700 text-lg mt-4">
+                            Bhai, Islam humein gussa peena aur maaf karna sikhata hai. Main jaanta hoon gussa fitoori hai, par maaf kar dena us se bhi bada darja hai.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Guzarish (Final Appeal) -->
+        <section id="guzarish" class="mb-10 pt-16 text-center">
+            <div class="glass-card rounded-3xl p-10 md:p-14 bg-gradient-to-br from-rose-50/80 to-white/80 shadow-xl border-2 border-rose-100">
+                <h2 class="font-heading text-4xl font-bold text-slate-800 mb-6">Aakhiri Guzarish</h2>
+                
+                <p class="text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed mb-10">
+                    Shaista ki khushi aur uski marzi ka khayal rakhte hue, kya aap is chote bhai ko ek aakhiri mauka de sakte hain? Main sab kuch sahi tarike se, aapki ijazat aur duaon ke saath karna chahta hoon. Ek bar mil lijiye, mujhe apni baat sabit karne ka mauka dijiye.
+                </p>
+
+                <button onclick="showHeart()" class="relative overflow-hidden group bg-gradient-to-r from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white text-lg font-medium px-10 py-4 rounded-full shadow-lg hover:shadow-rose-500/40 transition-all transform hover:scale-105 active:scale-95">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>Main Apne Waade Par Qayam Hoon</span>
+                        <svg class="w-5 h-5 group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                    </span>
+                </button>
+                <div id="heart-container" class="mt-6 h-8 text-2xl opacity-0 transition-opacity duration-500">
+                    <span class="inline-block animate-bounce text-rose-500">❤️ JazakAllah Khair Bhai ❤️</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-nav py-8 text-center mt-auto border-t border-white/50">
+        <p class="text-slate-500 text-sm">
+            Mera dil saaf hai, aur umeed baqi hai.<br>
+            <span class="italic mt-2 inline-block">Aapke jawab ka intezar rahega.</span>
+        </p>
+        
+        <!-- Back to Top -->
+        <a href="#home" class="inline-block mt-6 p-3 bg-white/80 rounded-full shadow-sm text-slate-400 hover:text-teal-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </a>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Gentle interaction for the final button
+        function showHeart() {
+            const container = document.getElementById('heart-container');
+            container.classList.remove('opacity-0');
+            container.classList.add('opacity-100');
+            
+            // Create mini floating hearts (confetti style)
+            for(let i=0; i<5; i++) {
+                createMiniHeart();
+            }
+        }
+
+        function createMiniHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '✨';
+            heart.className = 'absolute text-xl pointer-events-none transition-all duration-1000 ease-out z-50';
+            
+            // Random start position around the button
+            const button = document.querySelector('button');
+            const rect = button.getBoundingClientRect();
+            
+            const startX = rect.left + (Math.random() * rect.width);
+            const startY = rect.top + window.scrollY;
+            
+            heart.style.left = startX + 'px';
+            heart.style.top = startY + 'px';
+            
+            document.body.appendChild(heart);
+            
+            // Animate up and fade out
+            setTimeout(() => {
+                heart.style.transform = `translateY(-${50 + Math.random() * 50}px) scale(${1.5})`;
+                heart.style.opacity = '0';
+            }, 50);
+            
+            // Cleanup
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
